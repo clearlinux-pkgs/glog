@@ -4,7 +4,7 @@
 #
 Name     : glog
 Version  : 0.3.4
-Release  : 7
+Release  : 8
 URL      : https://github.com/google/glog/archive/v0.3.4.tar.gz
 Source0  : https://github.com/google/glog/archive/v0.3.4.tar.gz
 Summary  : A C++ application logging library
