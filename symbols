@@ -52,19 +52,14 @@ libglog.so.0:_ZN6google15LogMessageFatalD1Ev
 libglog.so.0:_ZN6google15LogMessageFatalD2Ev
 libglog.so.0:_ZN6google15SetEmailLoggingEiPKc
 libglog.so.0:_ZN6google15TruncateLogFileEPKcll
-libglog.so.0:_ZN6google16GetAnsiColorCodeENS_9GLogColorE
-libglog.so.0:_ZN6google16SafeAppendStringEPKcPci
 libglog.so.0:_ZN6google16SetStderrLoggingEi
 libglog.so.0:_ZN6google16posix_strerror_rEiPcm
 libglog.so.0:_ZN6google17InitGoogleLoggingEPKc
 libglog.so.0:_ZN6google17SetLogDestinationEiPKc
-libglog.so.0:_ZN6google18DebugWriteToStringEPKcPv
 libglog.so.0:_ZN6google18GetLogSeverityNameEi
 libglog.so.0:_ZN6google19CheckstrcmptrueImplB5cxx11EPKcS1_S1_
 libglog.so.0:_ZN6google19FlushLogFilesUnsafeEi
-libglog.so.0:_ZN6google19RawLog__SetLastTimeERK2tmi
 libglog.so.0:_ZN6google19ReprintFatalMessageEv
-libglog.so.0:_ZN6google19SafeAppendHexNumberEmPci
 libglog.so.0:_ZN6google20CheckstrcmpfalseImplB5cxx11EPKcS1_S1_
 libglog.so.0:_ZN6google20InstallFailureWriterEPFvPKciE
 libglog.so.0:_ZN6google20TruncateStdoutStderrEv
@@ -113,7 +108,6 @@ libglog.so.0:_ZN6google4base8internal15GetExitOnDFatalEv
 libglog.so.0:_ZN6google4base8internal15SetExitOnDFatalEb
 libglog.so.0:_ZN6google4base9GetLoggerEi
 libglog.so.0:_ZN6google4base9SetLoggerEiPNS0_6LoggerE
-libglog.so.0:_ZN6google6itoa_rElPcmim
 libglog.so.0:_ZN6google7LogSink12WaitTillSentEv
 libglog.so.0:_ZN6google7LogSink8ToStringB5cxx11EiPKciPK2tmS2_m
 libglog.so.0:_ZN6google7LogSinkD0Ev

@@ -1,0 +1,8 @@
+Configure miss: libunwind.h usability
+Configure miss: libunwind.h presence
+Configure miss: libunwind.h
+Configure miss: __uint16
+Configure miss: dladdr
+Configure miss: main in -lgflags
+Configure miss: gtest-config
+Configure miss: main in -lgtest
