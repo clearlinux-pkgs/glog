@@ -4,13 +4,12 @@
 #
 Name     : glog
 Version  : 0.6.0
-Release  : 15
+Release  : 16
 URL      : https://github.com/google/glog/archive/v0.6.0/glog-0.6.0.tar.gz
 Source0  : https://github.com/google/glog/archive/v0.6.0/glog-0.6.0.tar.gz
 Summary  : Google Log (glog) C++ logging framework
 Group    : Development/Tools
 License  : BSD-3-Clause
-Requires: glog-filemap = %{version}-%{release}
 Requires: glog-lib = %{version}-%{release}
 Requires: glog-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
@@ -32,19 +31,10 @@ Requires: glog = %{version}-%{release}
 dev components for the glog package.
 
 
-%package filemap
-Summary: filemap components for the glog package.
-Group: Default
-
-%description filemap
-filemap components for the glog package.
-
-
 %package lib
 Summary: lib components for the glog package.
 Group: Libraries
 Requires: glog-license = %{version}-%{release}
-Requires: glog-filemap = %{version}-%{release}
 
 %description lib
 lib components for the glog package.
@@ -67,7 +57,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1649115161
+export SOURCE_DATE_EPOCH=1656033043
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -87,10 +77,10 @@ export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Wl,-z,x86-64-v3 -ffat-lto-objects -flto=auto -march=x86-64-v3 -mtune=skylake "
-export FCFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -ffat-lto-objects -flto=auto -march=x86-64-v3 -mtune=skylake "
-export FFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -ffat-lto-objects -flto=auto -march=x86-64-v3 -mtune=skylake "
-export CXXFLAGS="$CXXFLAGS -O3 -Wl,-z,x86-64-v3 -ffat-lto-objects -flto=auto -march=x86-64-v3 -mtune=skylake "
+export CFLAGS="$CFLAGS -O3 -Wl,-z,x86-64-v3 -ffat-lto-objects -flto=auto -march=x86-64-v3 -msse2avx -mtune=skylake "
+export FCFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -ffat-lto-objects -flto=auto -march=x86-64-v3 -msse2avx -mtune=skylake "
+export FFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -ffat-lto-objects -flto=auto -march=x86-64-v3 -msse2avx -mtune=skylake "
+export CXXFLAGS="$CXXFLAGS -O3 -Wl,-z,x86-64-v3 -ffat-lto-objects -flto=auto -march=x86-64-v3 -msse2avx -mtune=skylake "
 export CFLAGS="$CFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
 export CXXFLAGS="$CXXFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
 export FFLAGS="$FFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
@@ -100,7 +90,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1649115161
+export SOURCE_DATE_EPOCH=1656033043
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/glog
 cp %{_builddir}/glog-0.6.0/COPYING %{buildroot}/usr/share/package-licenses/glog/43c9d4e201bf773d965455b593cd8a244d98564b
@@ -110,7 +100,7 @@ popd
 pushd clr-build
 %make_install
 popd
-/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -132,15 +122,13 @@ popd
 /usr/lib64/libglog.so
 /usr/lib64/pkgconfig/libglog.pc
 
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-glog
-
 %files lib
 %defattr(-,root,root,-)
+/usr/lib64/glibc-hwcaps/x86-64-v3/libglog.so
+/usr/lib64/glibc-hwcaps/x86-64-v3/libglog.so.0.6.0
+/usr/lib64/glibc-hwcaps/x86-64-v3/libglog.so.1
 /usr/lib64/libglog.so.0.6.0
 /usr/lib64/libglog.so.1
-/usr/share/clear/optimized-elf/lib*
 
 %files license
 %defattr(0644,root,root,0755)
