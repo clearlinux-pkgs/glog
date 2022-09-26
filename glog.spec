@@ -4,7 +4,7 @@
 #
 Name     : glog
 Version  : 0.6.0
-Release  : 20
+Release  : 21
 URL      : https://github.com/google/glog/archive/v0.6.0/glog-0.6.0.tar.gz
 Source0  : https://github.com/google/glog/archive/v0.6.0/glog-0.6.0.tar.gz
 Summary  : Google Log (glog) C++ logging framework
