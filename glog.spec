@@ -5,7 +5,7 @@
 #
 Name     : glog
 Version  : 0.6.0
-Release  : 25
+Release  : 26
 URL      : https://github.com/google/glog/archive/v0.6.0/glog-0.6.0.tar.gz
 Source0  : https://github.com/google/glog/archive/v0.6.0/glog-0.6.0.tar.gz
 Summary  : Google Log (glog) C++ logging framework
@@ -61,7 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682969985
+export SOURCE_DATE_EPOCH=1685509820
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -94,7 +94,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1682969985
+export SOURCE_DATE_EPOCH=1685509820
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/glog
 cp %{_builddir}/glog-%{version}/COPYING %{buildroot}/usr/share/package-licenses/glog/43c9d4e201bf773d965455b593cd8a244d98564b || :
@@ -111,7 +111,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libglog.so
 /usr/include/glog/export.h
 /usr/include/glog/log_severity.h
 /usr/include/glog/logging.h
@@ -130,7 +129,6 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /V3/usr/lib64/libglog.so.0.6.0
-/V3/usr/lib64/libglog.so.1
 /usr/lib64/libglog.so.0.6.0
 /usr/lib64/libglog.so.1
 
